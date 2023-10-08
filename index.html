@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style>
+            a, button.link {
+              color: #6adbff
+            }
+            a:hover, button.link:hover {
+              color: #32cd32
+            }
+            a:visited {
+              color: #af69ef
+            }
+            a:after {
+              content: url(https://upload.wikimedia.org/wikipedia/commons/4/44/Icon_External_Link.svg);
+              margin: 0 0 0 3px;
+            }
+            button.link {
+              background: none!important;
+              border: none!important;
+              padding: 0!important;
+              font-family: sans-serif;
+              font-size: medium;
+              cursor: pointer
+            }
+            table.field {
+              margin-left: auto;
+              margin-right: auto;
+              table-layout: fixed
+            }
+            table.field td {
+              min-width: 14px;
+              padding-bottom: 15px
+            }
+            div.grid {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(1px, 1fr));
+              grid-gap: 1rem 0
+            }
+        </style>
+        <script type="text/javascript" src="alea.js"></script>
+        <script type="text/javascript" src="main.js"></script>
+    </head>
+    <body style="font-family:sans-serif;background:#2e2e2e;color:#e6e6e6" onload="main()">
+        <h1 style="text-align:center">Hydra Replayer</h1>
+        <div style="text-align:center">
+            Frame
+            <input size="6" id="start" value="0"></input>
+            <br>
+            Frames are
+            <input size="4" id="timeout" value="250"></input>
+            ms
+            <div style="margin-top:20px">
+              <button class="link" onclick="go_back()">&#x25c0;</button>
+              <button class="link" id="startstop" onclick="start()" style="margin-left:20px;margin-right:20px">Start</button>
+              <button class="link" onclick="go_forward()">&#x25b6;</button>
+            </div>
+        </div>
+        <div id="player" class="grid" style="text-align:center;margin:auto;max-width:500px;margin-top:20px">
+          <div id="player_left">
+            <table id="hold" class="field" cellspacing="0"></table>
+            <div style="margin-top:50px">
+              <div id="pc-count" style="font-size:40px;font-weight:bold"></div>
+              <div>PCs</div>
+            </div>
+          </div>
+          <div id="player_center">
+            <table id="playing-field" class="field" cellspacing="0"></table>
+          </div>
+          <div id="player_right">
+            <table id="next0" class="field" cellspacing="0"></table>
+            <table id="next1" class="field" cellspacing="0"></table>
+            <table id="next2" class="field" cellspacing="0"></table>
+            <table id="next3" class="field" cellspacing="0"></table>
+            <table id="next4" class="field" cellspacing="0"></table>
+          </div>
+        </div>
+    </body>
+</html>
