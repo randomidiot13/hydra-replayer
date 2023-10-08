@@ -275,7 +275,7 @@ async function main() {
         let replay_id = window.location.href.match(/.*\?(.*)/)[1];
         replay_id = parseInt(replay_id);
         if (isNaN(replay_id) || replay_id < 0) throw 1;
-        let t = await (await fetch(`replays/${replay_id}.txt`)).text();
+        t = await (await fetch(`replays/${replay_id}.txt`)).text();
         replay_data = t.split("\n");
         replay_data.pop();
         for (let i = 1; i < replay_data.length; i++) {
