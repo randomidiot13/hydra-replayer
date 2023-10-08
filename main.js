@@ -279,7 +279,7 @@ async function main() {
         replay_data = t.split("\n");
         replay_data.pop();
         for (let i = 1; i < replay_data.length; i++) {
-            replay_data[i] = replay_data[i].split(",").map(parseInt);
+            replay_data[i] = replay_data[i].split(",").map(parseFloat);
         }
     }
     catch {
